@@ -1,0 +1,28 @@
+# Benchmark "mul8u_17MJ" written by ABC on Wed Sep 28 16:17:10 2022
+.model mul8u_17MJ
+.inputs A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7] B[0] B[1] B[2] B[3] B[4] \
+ B[5] B[6] B[7]
+.outputs O[0] O[1] O[2] O[3] O[4] O[5] O[6] O[7] O[8] O[9] O[10] O[11] \
+ O[12] O[13] O[14] O[15]
+.gate AND2_X1   A1=A[5] A2=B[5] ZN=O[7]
+.gate NAND2_X1  A1=A[7] A2=B[7] ZN=new_n44_
+.gate INV_X1    A=new_n44_ ZN=O[13]
+.gate OAI211_X1 A=A[7] B=B[7] C1=A[6] C2=B[6] ZN=new_n46_
+.gate NAND2_X1  A1=A[6] A2=B[7] ZN=new_n47_
+.gate NAND2_X1  A1=A[7] A2=B[6] ZN=new_n48_
+.gate NAND3_X1  A1=new_n44_ A2=new_n47_ A3=new_n48_ ZN=new_n49_
+.gate AND2_X1   A1=new_n49_ A2=new_n46_ ZN=O[14]
+.gate INV_X1    A=new_n46_ ZN=O[15]
+.gate _const0_  z=O[0]
+.gate _const0_  z=O[1]
+.gate _const0_  z=O[2]
+.gate _const0_  z=O[3]
+.gate _const0_  z=O[4]
+.gate _const0_  z=O[5]
+.gate _const0_  z=O[6]
+.gate _const0_  z=O[8]
+.gate _const0_  z=O[9]
+.gate _const0_  z=O[10]
+.gate AND2_X1   A1=A[5] A2=B[5] ZN=O[11]
+.gate AND2_X1   A1=A[5] A2=B[5] ZN=O[12]
+.end

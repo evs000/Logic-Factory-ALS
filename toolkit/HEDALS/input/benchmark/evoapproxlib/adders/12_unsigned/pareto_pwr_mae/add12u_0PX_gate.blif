@@ -1,0 +1,37 @@
+# Benchmark "add12u_0PX" written by ABC on Wed Sep 28 15:26:03 2022
+.model add12u_0PX
+.inputs A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7] A[8] A[9] A[10] A[11] B[0] \
+ B[1] B[2] B[3] B[4] B[5] B[6] B[7] B[8] B[9] B[10] B[11]
+.outputs O[0] O[1] O[2] O[3] O[4] O[5] O[6] O[7] O[8] O[9] O[10] O[11] \
+ O[12]
+.gate NAND2_X1  A1=A[8] A2=B[8] ZN=new_n38_
+.gate INV_X1    A=new_n38_ ZN=O[1]
+.gate AND2_X1   A1=A[10] A2=B[10] ZN=new_n40_
+.gate NAND2_X1  A1=A[9] A2=B[9] ZN=new_n41_
+.gate NOR2_X1   A1=A[9] A2=B[9] ZN=new_n42_
+.gate OAI21_X1  A=new_n41_ B1=new_n42_ B2=new_n38_ ZN=new_n43_
+.gate NOR2_X1   A1=A[10] A2=B[10] ZN=new_n44_
+.gate INV_X1    A=new_n44_ ZN=new_n45_
+.gate AOI21_X1  A=new_n40_ B1=new_n43_ B2=new_n45_ ZN=new_n46_
+.gate INV_X1    A=new_n46_ ZN=O[2]
+.gate INV_X1    A=new_n40_ ZN=new_n48_
+.gate NOR2_X1   A1=new_n40_ A2=new_n44_ ZN=new_n49_
+.gate NAND2_X1  A1=new_n43_ A2=new_n49_ ZN=new_n50_
+.gate OR2_X1    A1=A[11] A2=B[11] ZN=new_n51_
+.gate NAND2_X1  A1=A[11] A2=B[11] ZN=new_n52_
+.gate NAND2_X1  A1=new_n51_ A2=new_n52_ ZN=new_n53_
+.gate AOI21_X1  A=new_n53_ B1=new_n50_ B2=new_n48_ ZN=O[3]
+.gate INV_X1    A=new_n53_ ZN=O[4]
+.gate OR2_X1    A1=A[7] A2=B[7] ZN=O[7]
+.gate NOR2_X1   A1=A[8] A2=B[8] ZN=new_n58_
+.gate NOR2_X1   A1=O[1] A2=new_n58_ ZN=O[8]
+.gate XNOR2_X1  A=A[9] B=B[9] ZN=new_n60_
+.gate XNOR2_X1  A=new_n60_ B=O[1] ZN=O[9]
+.gate XOR2_X1   A=new_n43_ B=new_n49_ Z=O[10]
+.gate AOI221_X4 A=new_n40_ B1=new_n51_ B2=new_n52_ C1=new_n43_ C2=new_n45_ ZN=new_n63_
+.gate NOR2_X1   A1=new_n63_ A2=O[3] ZN=O[11]
+.gate OAI21_X1  A=new_n52_ B1=new_n46_ B2=new_n53_ ZN=O[12]
+.gate _const1_  z=O[6]
+.gate BUF_X1    A=A[8] Z=O[0]
+.gate BUF_X1    A=B[3] Z=O[5]
+.end

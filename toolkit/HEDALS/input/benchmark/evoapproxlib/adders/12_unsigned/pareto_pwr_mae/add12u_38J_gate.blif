@@ -1,0 +1,29 @@
+# Benchmark "add12u_38J" written by ABC on Wed Sep 28 15:26:06 2022
+.model add12u_38J
+.inputs A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7] A[8] A[9] A[10] A[11] B[0] \
+ B[1] B[2] B[3] B[4] B[5] B[6] B[7] B[8] B[9] B[10] B[11]
+.outputs O[0] O[1] O[2] O[3] O[4] O[5] O[6] O[7] O[8] O[9] O[10] O[11] \
+ O[12]
+.gate AND2_X1   A1=A[11] A2=B[11] ZN=new_n38_
+.gate NOR2_X1   A1=A[11] A2=B[11] ZN=new_n39_
+.gate OAI21_X1  A=B[10] B1=new_n38_ B2=new_n39_ ZN=new_n40_
+.gate INV_X1    A=B[10] ZN=new_n41_
+.gate NAND2_X1  A1=A[11] A2=B[11] ZN=new_n42_
+.gate INV_X1    A=A[11] ZN=new_n43_
+.gate INV_X1    A=B[11] ZN=new_n44_
+.gate NAND2_X1  A1=new_n43_ A2=new_n44_ ZN=new_n45_
+.gate NAND3_X1  A1=new_n45_ A2=new_n41_ A3=new_n42_ ZN=new_n46_
+.gate NAND2_X1  A1=new_n40_ A2=new_n46_ ZN=O[11]
+.gate OAI21_X1  A=new_n42_ B1=new_n39_ B2=new_n41_ ZN=O[12]
+.gate BUF_X1    A=B[3] Z=O[0]
+.gate BUF_X1    A=A[9] Z=O[1]
+.gate BUF_X1    A=B[6] Z=O[2]
+.gate BUF_X1    A=A[4] Z=O[3]
+.gate BUF_X1    A=A[5] Z=O[4]
+.gate BUF_X1    A=A[6] Z=O[5]
+.gate BUF_X1    A=A[9] Z=O[6]
+.gate BUF_X1    A=A[8] Z=O[7]
+.gate BUF_X1    A=B[8] Z=O[8]
+.gate BUF_X1    A=B[9] Z=O[9]
+.gate BUF_X1    A=A[10] Z=O[10]
+.end
