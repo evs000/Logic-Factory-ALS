@@ -34,6 +34,46 @@ set(ABC_USE_NAMESPACE "babc")
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/abc EXCLUDE_FROM_ALL)
 
 ######################################################################
+# compile espresso with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/espresso/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/espresso is missing!")
+endif()
+add_subdirectory(espresso ${CMAKE_BINARY_DIR}/toolkit/espresso )
+
+######################################################################
+# compile HEDALS with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/HEDALS/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/HEDALS is missing!")
+endif()
+add_subdirectory(HEDALS ${CMAKE_BINARY_DIR}/toolkit/HEDALS )
+
+######################################################################
+# compile AppResub with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/ResubALS/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/ResubALS is missing!")
+endif()
+add_subdirectory(ResubALS ${CMAKE_BINARY_DIR}/toolkit/ResubALS )
+
+######################################################################
+# compile MECALS with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/MECALS/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/MECALS is missing!")
+endif()
+add_subdirectory(MECALS ${CMAKE_BINARY_DIR}/toolkit/MECALS )
+
+######################################################################
+# compile VACSEM with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/VACSEM/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/VACSEM is missing!")
+endif()
+add_subdirectory(VACSEM ${CMAKE_BINARY_DIR}/toolkit/VACSEM )
+
+######################################################################
 # compile mockturtle with CMakeLists.txt
 ######################################################################
 if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/mockturtle/CMakeLists.txt)

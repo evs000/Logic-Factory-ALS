@@ -839,6 +839,19 @@ float Abc_NtkGetArea( Abc_Ntk_t* pNtk );
 
 } // namespace ABC_NAMESPACE
 
+namespace hedals{
+int hedals_main(int argc, char** argv);
+}
+namespace resubals{
+int app_resub_main(int argc, char** argv);
+}
+namespace mecals{
+int mecals_main(int argc, char** argv);
+}
+namespace vacsem{
+int c2c_main(int argc, char** argvs);
+}
+int sim_sharp_sat_main(int argc, char** argvs);
 #include "misc/util/abc_namespaces.h"
 #include "misc/util/abc_global.h"
 #include "base/abc/abc.h"

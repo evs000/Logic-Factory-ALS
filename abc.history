@@ -1,0 +1,1042 @@
+read_lib techlib/clean/sky130.lib
+r ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/HEDALS/input/benchmark/bacs/mult8.blif
+w ./tmp/0_mult8_err_0_size_470_depth_44.blif
+w ./tmp/0_mult8_err_0_area_489.44_delay_813.291.blif
+w ./tmp/1_mult8_err_4.02303_size_462_depth_43.blif
+w ./tmp/1_mult8_err_4.02303_area_486.248_delay_828.044.blif
+w ./tmp/2_mult8_err_4.03135_size_456_depth_43.blif
+w ./tmp/2_mult8_err_4.03135_area_488.376_delay_895.211.blif
+w ./tmp/3_mult8_err_4.03135_size_456_depth_43.blif
+w ./tmp/3_mult8_err_4.03135_area_497.154_delay_899.3.blif
+w ./tmp/4_mult8_err_8.01855_size_456_depth_42.blif
+w ./tmp/4_mult8_err_8.01855_area_482.258_delay_820.024.blif
+w ./tmp/5_mult8_err_10.5413_size_453_depth_42.blif
+w ./tmp/5_mult8_err_10.5413_area_480.396_delay_847.261.blif
+r ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/HEDALS/input/benchmark/bacs/mult8.blif
+w ./tmp/0_mult8_err_0_size_470_depth_44.blif
+w ./tmp/0_mult8_err_0_area_489.44_delay_813.291.blif
+w ./tmp/1_mult8_err_3.91811_size_462_depth_43.blif
+w ./tmp/1_mult8_err_3.91811_area_491.302_delay_818.371.blif
+w ./tmp/2_mult8_err_9.07422_size_457_depth_43.blif
+w ./tmp/2_mult8_err_9.07422_area_489.44_delay_817.731.blif
+w ./tmp/3_mult8_err_10.0499_size_456_depth_43.blif
+w ./tmp/3_mult8_err_10.0499_area_486.248_delay_852.689.blif
+w ./tmp/4_mult8_err_10.9923_size_453_depth_43.blif
+w ./tmp/4_mult8_err_10.9923_area_483.854_delay_832.366.blif
+w ./tmp/1_mult8_err_4.05374_size_462_depth_43.blif
+w ./tmp/1_mult8_err_4.05374_area_486.248_delay_828.044.blif
+r ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/HEDALS/input/benchmark/bacs/mult8.blif
+w ./tmp/0_mult8_err_0_size_470_depth_44.blif
+w ./tmp/0_mult8_err_0_area_489.44_delay_813.291.blif
+resyn2; ifraig; logic; sop;
+w ./tmp/1_mult8_err_9.94114_size_461_depth_43.blif
+st; resyn2; ifraig; dch; map;
+topo; stime
+w ./tmp/1_mult8_err_9.94114_area_494.494_delay_845.504.blif
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./input/standard-cell/nangate_45nm_typ.lib
+read_lib ./input/standard-cell/nangate_45nm_typ.lib
+r input/benchmark/aig/mac.aig
+r input/miter/width_8_wce_31.aig
+w tmp/0.blif
+r ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/MECALS/input/benchmark/aig/mac.aig
+r ./toolkit/MECALS/input/miter/width_8_wce_31.aig
+w ./tmp/0.blif
+w ./tmp/1.blif
+w ./tmp/2.blif
+w ./tmp/3.blif
+w ./tmp/4.blif
+w ./tmp/5.blif
+w ./tmp/6.blif
+w ./tmp/7.blif
+w ./tmp/8.blif
+w ./tmp/9.blif
+w ./tmp/10.blif
+w ./tmp/11.blif
+w ./tmp/12.blif
+w ./tmp/13.blif
+w ./tmp/14.blif
+w ./tmp/15.blif
+st; ifraig; resyn2
+w ./tmp/16.blif
+ps; st; ps; ifraig; ps;
+w ./tmp/final.blif
+dch; amap; stime;
+r ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/HEDALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/HEDALS/input/benchmark/bacs/mult8.blif
+w ./tmp/0_mult8_err_0_size_470_depth_44.blif
+w ./tmp/0_mult8_err_0_area_489.44_delay_813.291.blif
+w ./tmp/1_mult8_err_4.0064_size_462_depth_43.blif
+w ./tmp/1_mult8_err_4.0064_area_486.248_delay_828.044.blif
+resyn2; ifraig; logic; sop;
+w ./tmp/2_mult8_err_4.03071_size_456_depth_43.blif
+st; resyn2; ifraig; dch; map;
+topo; stime
+w ./tmp/2_mult8_err_4.03071_area_488.376_delay_895.211.blif
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+sweep; sop;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r -m tmp/map.v
+unbuffer; topo; stime;
+r ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/MECALS/input/benchmark/aig/mac.aig
+r ./toolkit/MECALS/input/miter/width_8_wce_31.aig
+w ./tmp/0.blif
+w ./tmp/1.blif
+w ./tmp/2.blif
+w ./tmp/3.blif
+w ./tmp/4.blif
+w ./tmp/5.blif
+w ./tmp/6.blif
+w ./tmp/7.blif
+w ./tmp/8.blif
+w ./tmp/9.blif
+w ./tmp/10.blif
+w ./tmp/11.blif
+w ./tmp/12.blif
+w ./tmp/13.blif
+w ./tmp/14.blif
+w ./tmp/15.blif
+w ./tmp/16.blif
+w ./tmp/final.blif
+dch; amap; stime;
+r ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/MECALS//input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/MECALS/input/benchmark/aig/mac.aig
+r ./toolkit/MECALS/input/miter/width_8_wce_31.aig
+w ./tmp/0.blif
+w ./tmp/1.blif
+w ./tmp/2.blif
+w ./tmp/3.blif
+w ./tmp/4.blif
+w ./tmp/5.blif
+w ./tmp/6.blif
+w ./tmp/7.blif
+w ./tmp/8.blif
+w ./tmp/9.blif
+w ./tmp/10.blif
+w ./tmp/11.blif
+w ./tmp/12.blif
+w ./tmp/13.blif
+w ./tmp/14.blif
+w ./tmp/15.blif
+st; ifraig; resyn2
+w ./tmp/16.blif
+ps; st; ps; ifraig; ps;
+w ./tmp/final.blif
+dch; amap; stime;
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+amap
+r ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+read_lib ./toolkit/ResubALS/input/standard-cell/nangate_45nm_typ.lib
+r ./toolkit/ResubALS/input/benchmark/iscas/c880.blif
+st; dch; amap;
+st; logic; sop; ps;
+st; compress2rs; logic; sop; ps;
+st; compress2rs; ps;
+dch; amap;
+map -D 587.615
+dch; map -a
+map -a
+dch; map -D 587.615
+r ./toolkiy/VACSEM/Circuit2Cnf/input/mult15/mult15.blif
+r ./Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+read_genlib ./Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/mult15.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/22_mult15_err_0.0944366_size_1696_depth_40.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/deviation-function/width_30_absolute_error.blif
+st; ifraig;
+st; compress2rs;
+write_blif ./tmp/22_mult15_err_0.0944366_0.blif
+write_blif ./tmp/22_mult15_err_0.0944366_1.blif
+write_blif ./tmp/22_mult15_err_0.0944366_2.blif
+write_blif ./tmp/22_mult15_err_0.0944366_3.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+read_genlib ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/mult15.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/22_mult15_err_0.0944366_size_1696_depth_40.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/deviation-function/width_30_absolute_error.blif
+st; ifraig;
+st; compress2rs;
+write_blif ./tmp/22_mult15_err_0.0944366_0.blif
+write_blif ./tmp/22_mult15_err_0.0944366_1.blif
+write_blif ./tmp/22_mult15_err_0.0944366_2.blif
+write_blif ./tmp/22_mult15_err_0.0944366_3.blif
+write_blif ./tmp/22_mult15_err_0.0944366_4.blif
+write_blif ./tmp/22_mult15_err_0.0944366_5.blif
+write_blif ./tmp/22_mult15_err_0.0944366_6.blif
+write_blif ./tmp/22_mult15_err_0.0944366_7.blif
+write_blif ./tmp/22_mult15_err_0.0944366_8.blif
+write_blif ./tmp/22_mult15_err_0.0944366_9.blif
+write_blif ./tmp/22_mult15_err_0.0944366_10.blif
+write_blif ./tmp/22_mult15_err_0.0944366_11.blif
+write_blif ./tmp/22_mult15_err_0.0944366_12.blif
+write_blif ./tmp/22_mult15_err_0.0944366_13.blif
+write_blif ./tmp/22_mult15_err_0.0944366_14.blif
+write_blif ./tmp/22_mult15_err_0.0944366_15.blif
+write_blif ./tmp/22_mult15_err_0.0944366_16.blif
+write_blif ./tmp/22_mult15_err_0.0944366_17.blif
+write_blif ./tmp/22_mult15_err_0.0944366_18.blif
+write_blif ./tmp/22_mult15_err_0.0944366_19.blif
+write_blif ./tmp/22_mult15_err_0.0944366_20.blif
+write_blif ./tmp/22_mult15_err_0.0944366_21.blif
+write_blif ./tmp/22_mult15_err_0.0944366_22.blif
+write_blif ./tmp/22_mult15_err_0.0944366_23.blif
+write_blif ./tmp/22_mult15_err_0.0944366_24.blif
+write_blif ./tmp/22_mult15_err_0.0944366_25.blif
+write_blif ./tmp/22_mult15_err_0.0944366_26.blif
+write_blif ./tmp/22_mult15_err_0.0944366_27.blif
+write_blif ./tmp/22_mult15_err_0.0944366_28.blif
+write_blif ./tmp/22_mult15_err_0.0944366_29.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+read_genlib ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/mult15.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/mult15/22_mult15_err_0.0944366_size_1696_depth_40.blif
+r ./toolkit/VACSEM/Circuit2Cnf/input/deviation-function/width_30_absolute_error.blif
+st; ifraig;
+st; compress2rs;
+write_blif ./tmp/test_0.blif
+write_blif ./tmp/test_1.blif
+write_blif ./tmp/test_2.blif
+write_blif ./tmp/test_3.blif
+write_blif ./tmp/test_4.blif
+write_blif ./tmp/test_5.blif
+write_blif ./tmp/test_6.blif
+write_blif ./tmp/test_7.blif
+write_blif ./tmp/test_8.blif
+write_blif ./tmp/test_9.blif
+write_blif ./tmp/test_10.blif
+write_blif ./tmp/test_11.blif
+write_blif ./tmp/test_12.blif
+write_blif ./tmp/test_13.blif
+write_blif ./tmp/test_14.blif
+write_blif ./tmp/test_15.blif
+write_blif ./tmp/test_16.blif
+write_blif ./tmp/test_17.blif
+write_blif ./tmp/test_18.blif
+write_blif ./tmp/test_19.blif
+write_blif ./tmp/test_20.blif
+write_blif ./tmp/test_21.blif
+write_blif ./tmp/test_22.blif
+write_blif ./tmp/test_23.blif
+write_blif ./tmp/test_24.blif
+write_blif ./tmp/test_25.blif
+write_blif ./tmp/test_26.blif
+write_blif ./tmp/test_27.blif
+write_blif ./tmp/test_28.blif
+write_blif ./tmp/test_29.blif
+miter ./toolkit/VACSEM/Circuit2Cnf/input/mult15/mult15.blif ./toolkit/VACSEM/Circuit2Cnf/input/mult15/22_mult15_err_0.0944366_size_1696_depth_40.blif
+st; compress2rs;
+logic; aig;
+r ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+read_genlib ./toolkit/VACSEM/Circuit2Cnf/input/standard-cell/mcnc_simple.genlib
+amap
+write_blif ./tmp/22_mult15_err_0.0944366.blif
