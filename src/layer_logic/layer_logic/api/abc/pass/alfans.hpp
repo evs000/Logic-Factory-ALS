@@ -20,9 +20,9 @@ namespace abc
 /**
  * @brief Approximate logic resubstitution
  * @example
- *  app_resub [options]
+ *  alfans [options]
  */
-void app_resub(const std::string& accCirc, const std::string& standCell, bool enableFastErrEst, bool enableMeasureMode, const std::string& appCirc, const std::string& lacType="APPRESUB", const std::string& outpPath="./tmp", const std::string& metrType="NMED", const std::string& distrType="UNIF", int seed=0, double errUppBound=0.15, int nFrame=102400, int nFrame4ResubGen=64, int maxCandResub=100000, int nThread=4)
+void alfans(const std::string& accCirc, const std::string& standCell, bool enableFastErrEst, double thresholdER, double thresholdMEM, double T_init=20, double T_final=1, const std::string& outpPath="./tmp", const std::string& distrType="UNIF", int seed=0, int nFrame=102400, int nFrame4ResubGen=64, int maxCandResub=100000, int nThread=4)
 {
     // auto ntktype = lfLntINST->get_ntktype_curr();
     // assert(ntktype == lf::misc::E_LF_NTK_TYPE::E_LF_NTK_TYPE_ABC_STRASH_AIG ||
@@ -42,22 +42,21 @@ void app_resub(const std::string& accCirc, const std::string& standCell, bool en
     if (!accCirc.empty()) argc += 2;
     if (!standCell.empty()) argc += 2;
     if (!outpPath.empty()) argc += 2;
-    if (!metrType.empty()) argc += 2;
     if (!distrType.empty()) argc += 2;
-    if (!lacType.empty()) argc += 2;
     if (seed >= 0) argc += 2;
-    if (errUppBound >= 0.0) argc += 2;
+    if (thresholdER >= 0.0) argc += 2;
+    if (thresholdMEM >= 0.0) argc += 2;
+    if (T_init >= 0.0) argc += 2;
+    if (T_final >= 0.0) argc += 2;
     if (nFrame >= 0) argc += 2;
     if (nFrame4ResubGen >= 0) argc += 2;
     if (maxCandResub >= 0) argc += 2;
     if (nThread >= 0) argc += 2;
     if (enableFastErrEst) argc += 2;
-    if (enableMeasureMode) argc += 2;
-    if (!appCirc.empty()) argc += 2;
 
     char** argv = ABC_ALLOC(char*, argc + 1);
     int pos = 0;
-    argv[pos++] = babc::Extra_UtilStrsav("AppResub");
+    argv[pos++] = babc::Extra_UtilStrsav("Alfans");
 
     if (!accCirc.empty()) {
         argv[pos++] = babc::Extra_UtilStrsav("--accCirc");
@@ -71,14 +70,6 @@ void app_resub(const std::string& accCirc, const std::string& standCell, bool en
         argv[pos++] = babc::Extra_UtilStrsav("--outpPath");
         argv[pos++] = babc::Extra_UtilStrsav(outpPath.c_str());
     }
-    if (!metrType.empty()) {
-        argv[pos++] = babc::Extra_UtilStrsav("--metrType");
-        argv[pos++] = babc::Extra_UtilStrsav(metrType.c_str());
-    }
-    if (!lacType.empty()){
-        argv[pos++] = babc::Extra_UtilStrsav("--lacType");
-        argv[pos++] = babc::Extra_UtilStrsav(lacType.c_str());
-    }
     if (!distrType.empty()) {
         argv[pos++] = babc::Extra_UtilStrsav("--distrType");
         argv[pos++] = babc::Extra_UtilStrsav(distrType.c_str());
@@ -87,9 +78,21 @@ void app_resub(const std::string& accCirc, const std::string& standCell, bool en
         argv[pos++] = babc::Extra_UtilStrsav("--seed");
         argv[pos++] = babc::Extra_UtilStrsav(std::to_string(seed).c_str());
     }
-    if (errUppBound >= 0.0) {
-        argv[pos++] = babc::Extra_UtilStrsav("--errUppBound");
-        argv[pos++] = babc::Extra_UtilStrsav(std::to_string(errUppBound).c_str());
+    if (thresholdER >= 0.0) {
+        argv[pos++] = babc::Extra_UtilStrsav("--thresholdER");
+        argv[pos++] = babc::Extra_UtilStrsav(std::to_string(thresholdER).c_str());
+    }
+    if (thresholdMEM >= 0.0) {
+        argv[pos++] = babc::Extra_UtilStrsav("--thresholdMEM");
+        argv[pos++] = babc::Extra_UtilStrsav(std::to_string(thresholdMEM).c_str());
+    }
+    if (T_init >= 0.0) {
+        argv[pos++] = babc::Extra_UtilStrsav("--T_init");
+        argv[pos++] = babc::Extra_UtilStrsav(std::to_string(T_init).c_str());
+    }
+    if (T_final >= 0.0) {
+        argv[pos++] = babc::Extra_UtilStrsav("--T_final");
+        argv[pos++] = babc::Extra_UtilStrsav(std::to_string(T_final).c_str());
     }
     if (nFrame >= 0) {
         argv[pos++] = babc::Extra_UtilStrsav("--nFrame");
@@ -111,15 +114,11 @@ void app_resub(const std::string& accCirc, const std::string& standCell, bool en
         argv[pos++] = babc::Extra_UtilStrsav("--enableFastErrEst");
         argv[pos++] = babc::Extra_UtilStrsav("1");
     }
-    if (enableMeasureMode) {
-        argv[pos++] = babc::Extra_UtilStrsav("--enableMeasureMode");
-        argv[pos++] = babc::Extra_UtilStrsav("1");
-    }
-    if (!appCirc.empty()) {
-        argv[pos++] = babc::Extra_UtilStrsav("--appCirc");
-        argv[pos++] = babc::Extra_UtilStrsav(appCirc.c_str());
-    }
-    resubals::app_resub_main(argc, argv);
+    // std::cout<<"alfans!"<<std::endl;
+    // for (int i = 0;i<pos;i++){
+    //     std::cout<<argv<<std::endl;
+    // }
+    alfans::main(argc, argv);
 }
 
 } // namespace abc

@@ -74,6 +74,14 @@ endif()
 add_subdirectory(VACSEM ${CMAKE_BINARY_DIR}/toolkit/VACSEM )
 
 ######################################################################
+# compile ALFANS with CMakeLists.txt
+######################################################################
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/ALFANS/CMakeLists.txt)
+    message(FATAL_ERROR "${CMAKE_CURRENT_SOURCE_DIR}/ALFANS is missing!")
+endif()
+add_subdirectory(ALFANS ${CMAKE_BINARY_DIR}/toolkit/ALFANS )
+
+######################################################################
 # compile mockturtle with CMakeLists.txt
 ######################################################################
 if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/mockturtle/CMakeLists.txt)

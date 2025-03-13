@@ -16,5 +16,6 @@ target_link_libraries(lf_logic INTERFACE
     mecals
     Circuit2Cnf
     ganak-static
+    alfans
 )
 target_include_directories(lf_logic SYSTEM INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

@@ -23,7 +23,7 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 add_definitions(-DLIN64 -g -Wall -O3 -std=c++2a)
 
 # Set output path
-set(EXECUTABLE_OUTPUT_PATH ${TOP_DIR})
+# set(EXECUTABLE_OUTPUT_PATH ${TOP_DIR})
 
 # Add an executable
 # add_executable(resubals.out ${sources})

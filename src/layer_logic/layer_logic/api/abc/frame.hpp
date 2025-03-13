@@ -852,6 +852,10 @@ namespace vacsem{
 int c2c_main(int argc, char** argvs);
 }
 int sim_sharp_sat_main(int argc, char** argvs);
+
+namespace alfans{
+int main(int argc, char** argv);
+}
 #include "misc/util/abc_namespaces.h"
 #include "misc/util/abc_global.h"
 #include "base/abc/abc.h"

@@ -88,8 +88,8 @@ int registerCmds()
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicHedals, "hedals" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicAppResub, "resubals" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMecals, "mecals" );
-  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicCircuit2Cnf, "circuit2cnf" );
-  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicSimSharpSat, "sim_sharp_sat" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicVacsem, "vacsem" );
+  LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicAlfans, "alfans" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMapFPGA, "map_fpga" );
   LF_MACOR_REGISTER_TCL_CMD( CmdLfLogicMapASIC, "map_asic" );
 

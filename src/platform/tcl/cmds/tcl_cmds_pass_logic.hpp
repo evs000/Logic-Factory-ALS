@@ -25,6 +25,7 @@
 #include "layer_logic/api/abc/pass/app_resub.hpp"
 #include "layer_logic/api/abc/pass/mecals.hpp"
 #include "layer_logic/api/abc/pass/vacsem.hpp"
+#include "layer_logic/api/abc/pass/alfans.hpp"
 
 #include "layer_logic/api/lsils/pass/balance.hpp"
 #include "layer_logic/api/lsils/pass/rewrite.hpp"
@@ -922,30 +923,47 @@ public:
   }
 }; // class CmdLfLogicMecals
 
-class CmdLfLogicCircuit2Cnf : public TclCmd
+class CmdLfLogicVacsem : public TclCmd
 {
 public:
-    explicit CmdLfLogicCircuit2Cnf(const char* cmd_name)
+    explicit CmdLfLogicVacsem(const char* cmd_name)
         : TclCmd(cmd_name)
     {
         // set the description
-        std::string description = "converts the average error verification problem into the #SAT (model counting) problem";
+        std::string description = "formally verify the average error";
         this->set_description(description);
         std::string domain = "logic";
         this->set_domain(domain);
 
         // set the options
         std::vector<lfCmdOption> options = {
-            { "-t", "abc", "string", "type of average error metric [=ER]" },
+            { "--type", "abc", "string", "type of average error metric [=ER]" },
             { "-e", "abc", "string", "path to exact circuit [=./toolkit/VACSEM/Circuit2Cnf/input/mult15/mult15.blif]" },
             { "-a", "abc", "string", "path to approximate circuit [=./toolkit/VACSEM/Circuit2Cnf/input/mult15/1_mult15_err_1.52588e-05_size_1780_depth_39.blif]" },
             { "-d", "abc", "string", "path to deviation-function circuit, meaningless for ER, only used for MED [=./toolkit/VACSEM/Circuit2Cnf/input/deviation-function/width_30_absolute_error.blif]" },
-            { "-o", "abc", "string", "path to output CNF file, MUST end with .cnf [=./toolkit/VACSEM/tmp/test.cnf]" }
+            { "-c", "abc", "string", "path to output CNF file, MUST end with .cnf [=./toolkit/VACSEM/tmp/test.cnf]" },
+            { "-v", "abc", "bool", "verbose"},
+            { "-noPP", "abc", "bool", "turn off preprocessing" },
+            { "-q", "abc", "bool", "quiet mode" },
+            { "-t", "abc", "int", "set time bound in seconds" },
+            { "-noCC", "abc", "bool", "turn off component caching" },
+            { "-cs", "abc", "int", "set max cache size in MB" },
+            { "-noPCC", "abc", "bool", "turn off probabilistic component caching" },
+            { "-seed", "abc", "int", "set random seed" },
+            { "-m", "abc", "int", "set range of hash function (= 64 x n)" },
+            { "-delta", "abc", "double", "set confidence parameter" },
+            { "-noCSVSADS", "abc", "bool", "turn off CSVSADS variable branching heuristic" },
+            { "-pol", "abc", "string", "set polarity: true, false, default, polaritycache" },
+            { "-EDR", "abc", "bool", "turn on EDR variable branching heuristic" },
+            { "-LSO", "abc", "int", "learn and start over after n decisions" },
+            { "-noPMC", "abc", "bool", "turn off projected model counting" },
+            { "-maxdec", "abc", "int", "-maxdec [n] terminate after n decision if conflict is less than m" },
+            { "-minconflicts", "abc", "int", "-minconflicts [m] terminate after n decision if conflict is less than m" }
         };
         setOptions(this, options);
     }
 
-    ~CmdLfLogicCircuit2Cnf() override = default;
+    ~CmdLfLogicVacsem() override = default;
 
     unsigned check() override
     {
@@ -965,10 +983,11 @@ public:
         std::map<std::string, std::vector<int>> intvecOptionsValue;
         std::map<std::string, std::vector<double>> doublevecOptionsValue;
 
-        std::vector<std::string> strOptions = {"-t", "-e", "-a", "-d", "-o"};
-        std::vector<std::string> boolOptions = {};
-        std::vector<std::string> intOptions = {};
-        std::vector<std::string> doubleOptions = {};
+        std::vector<std::string> strOptions = {"--type", "-e", "-a", "-d", "-c", 
+        "-pol" };
+        std::vector<std::string> boolOptions = { "-noPP", "-q", "-noCC", "-noPCC", "-noCSVSADS", "-EDR", "-noPMC" ,"-v"};
+        std::vector<std::string> intOptions = {"-t", "-cs", "-seed", "-m", "-LSO", "-maxdec", "-minconflicts"};
+        std::vector<std::string> doubleOptions = {"-delta"};
         std::vector<std::string> strvecOptions = {};
         std::vector<std::string> intvecOptions = {};
         std::vector<std::string> doublevecOptions = {};
@@ -981,16 +1000,33 @@ public:
         switch (anchor_tool_domain)
         {
         case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_ABC:
-            lf::logic::abc::circuit2cnf(
-                strOptionsValue["-t"], 
+            lf::logic::abc::vacsem(
+                boolOptionsValue["-noCC"],
+                boolOptionsValue["-noPP"],
+                boolOptionsValue["-q"],
+                boolOptionsValue["-v"],
+                boolOptionsValue["-noPCC"],
+                boolOptionsValue["-noCSVSADS"],
+                boolOptionsValue["-noPMC"],
+                boolOptionsValue["-EDR"],
+                intOptionsValue["-t"],
+                intOptionsValue["-LSO"],
+                intOptionsValue["-seed"],
+                intOptionsValue["-m"],
+                doubleOptionsValue["-delta"],
+                strOptionsValue["-pol"],
+                intOptionsValue["-cs"],
+                intOptionsValue["-maxdec"],
+                intOptionsValue["-minconflicts"],
+                strOptionsValue["--type"], 
                 strOptionsValue["-e"],
                 strOptionsValue["-a"],
                 strOptionsValue["-d"],
-                strOptionsValue["-o"]
+                strOptionsValue["-c"]
             );
             break;
         case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
-            std::cerr << "LSILS domain is not supported for CNF conversion!" << std::endl;
+            std::cerr << "LSILS domain is not supported for VACSEM!" << std::endl;
             return 0;
         default:
             std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
@@ -1000,43 +1036,37 @@ public:
     }
 }; // class CmdLfLogicCircuit2Cnf
 
-class CmdLfLogicSimSharpSat : public TclCmd 
+class CmdLfLogicAlfans : public TclCmd
 {
 public:
-  explicit CmdLfLogicSimSharpSat(const char* cmd_name)
+  explicit CmdLfLogicAlfans(const char* cmd_name)
       : TclCmd(cmd_name)
   {
-    // set the description
-    std::string description = "efficient simulation-enhanced #SAT solver";
+    std::string description = "ER - Max Error Magnitude constraint";
     this->set_description(description);
     std::string domain = "logic";
     this->set_domain(domain);
 
-    // set the options
     std::vector<lfCmdOption> options = {
-      { "-i", "abc", "string", "path to input CNF file"},
-      { "-v", "abc", "bool", "verbose"},
-      { "-noPP", "abc", "bool", "turn off preprocessing" },
-      { "-q", "abc", "bool", "quiet mode" },
-      { "-t", "abc", "int", "set time bound in seconds" },
-      { "-noCC", "abc", "bool", "turn off component caching" },
-      { "-cs", "abc", "int", "set max cache size in MB" },
-      { "-noPCC", "abc", "bool", "turn off probabilistic component caching" },
-      { "-seed", "abc", "int", "set random seed" },
-      { "-m", "abc", "int", "set range of hash function (= 64 x n)" },
-      { "-delta", "abc", "double", "set confidence parameter" },
-      { "-noCSVSADS", "abc", "bool", "turn off CSVSADS variable branching heuristic" },
-      { "-pol", "abc", "string", "set polarity: true, false, default, polaritycache" },
-      { "-EDR", "abc", "bool", "turn on EDR variable branching heuristic" },
-      { "-LSO", "abc", "int", "learn and start over after n decisions" },
-      { "-noPMC", "abc", "bool", "turn off projected model counting" },
-      { "-maxdec", "abc", "int", "-maxdec [n] terminate after n decision if conflict is less than m" },
-      { "-minconflicts", "abc", "int", "-minconflicts [m] terminate after n decision if conflict is less than m" }
+      { "--accCirc", "abc", "string", "path to accurate circuit" },
+      { "--standCell", "abc", "string", "path to standard cell library" },
+      { "--outpPath", "abc", "string", "path to approximate circuits [=tmp]" },
+      { "--distrType", "abc", "string", "error distribution type: UNIF, ENUM [=UNIF]" },
+      { "--seed", "abc", "int", "seed for randomness [=0]" },
+      { "--thresholdER", "abc", "double", "ER upper bound [=0.15]" },
+      { "--thresholdMEM", "abc", "double", "MEM upper bound [=30]" },
+      { "--Tinit", "abc", "double", "initial value of control parameter [=20]" },
+      { "--Tfinal", "abc", "double", "final stopping threshold of control parameter [=1]" },
+      { "--nFrame", "abc", "int", "# Monte Carlo samples, nFrame should be an integer multiple of 64 [=102400]" },
+      { "--nFrame4ResubGen", "abc", "int", "# patterns for AppResub Generation [=64]" },
+      { "--maxCandResub", "abc", "int", "max # candidate AppResubs [=100000]" },
+      { "--nThread", "abc", "int", "number of threads [=4]" },
+      { "--enableFastErrEst", "abc", "bool", "enable fast approximate error estimation" }
     };
     setOptions(this, options);
   }
 
-  ~CmdLfLogicSimSharpSat() override = default;
+  ~CmdLfLogicAlfans() override = default;
 
   unsigned check() override
   {
@@ -1056,15 +1086,14 @@ public:
     std::map<std::string, std::vector<int>> intvecOptionsValue;
     std::map<std::string, std::vector<double>> doublevecOptionsValue;
 
-    std::vector<std::string> strOptions = { "-i", 
-    "-pol" };
-    std::vector<std::string> boolOptions = { "-noPP", "-q", "-noCC", "-noPCC", "-noCSVSADS", "-EDR", "-noPMC" ,"-v"};
-    std::vector<std::string> intOptions = { "-t", "-cs", "-seed", "-m", "-LSO", "-maxdec", "-minconflicts"};
-    std::vector<std::string> doubleOptions = { "-delta" };
+    std::vector<std::string> strOptions = { "--accCirc", "--standCell", "--outpPath", "--distrType"};
+    std::vector<std::string> boolOptions = { "--enableFastErrEst" };
+    std::vector<std::string> intOptions = { "--seed", "--nFrame", "--nFrame4ResubGen", "--maxCandResub", "--nThread" };
+    std::vector<std::string> doubleOptions = { "--thresholdER", "--thresholdMEM", "--Tinit", "--Tfinal" };
     std::vector<std::string> strvecOptions = {};
     std::vector<std::string> intvecOptions = {};
     std::vector<std::string> doublevecOptions = {};
-
+    
     extractOptions(this, strOptions, boolOptions, intOptions, doubleOptions, strvecOptions, intvecOptions, doublevecOptions,
                    strOptionsValue, boolOptionsValue, intOptionsValue, doubleOptionsValue, strvecOptionsValue, intvecOptionsValue, doublevecOptionsValue);
 
@@ -1073,37 +1102,35 @@ public:
     switch (anchor_tool_domain)
     {
     case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_ABC:
-        lf::logic::abc::simSharpSat(
-          boolOptionsValue["-noCC"],
-        boolOptionsValue["-noPP"],
-        boolOptionsValue["-q"],
-        boolOptionsValue["-v"],
-        boolOptionsValue["-noPCC"],
-        boolOptionsValue["-noCSVSADS"],
-        boolOptionsValue["-noPMC"],
-        boolOptionsValue["-EDR"],
-        intOptionsValue["-t"],
-        intOptionsValue["-LSO"],
-        intOptionsValue["-seed"],
-        intOptionsValue["-m"],
-        doubleOptionsValue["-delta"],
-        strOptionsValue["-pol"],
-        intOptionsValue["-cs"],
-        intOptionsValue["-maxdec"],
-        intOptionsValue["-minconflicts"],
-        strOptionsValue["-i"]
+        lf::logic::abc::alfans(
+            strOptionsValue["--accCirc"],
+            strOptionsValue["--standCell"],
+            boolOptionsValue["--enableFastErrEst"],
+            doubleOptionsValue["--thresholdER"], 
+            doubleOptionsValue["--thresholdMEM"],
+            doubleOptionsValue["--Tinit"], 
+            doubleOptionsValue["--Tfinal"],
+            strOptionsValue["--outpPath"],
+            strOptionsValue["--distrType"],
+            intOptionsValue["--seed"], 
+            intOptionsValue["--nFrame"], 
+            intOptionsValue["--nFrame4ResubGen"], 
+            intOptionsValue["--maxCandResub"], 
+            intOptionsValue["--nThread"]
         );
         break;
+    
     case lf::misc::E_LF_ANCHOR_TOOL::E_LF_ANCHOR_TOOL_LOGIC_LSILS:
-        std::cerr << "LSILS domain is not supported for SimSharpSat integration!" << std::endl;
+        std::cerr << "LSILS domain is not supported for ALFANS integration!" << std::endl;
         return 0;
+    
     default:
         std::cerr << "Unsupported anchor domain, please use anchor to set the anchor!" << std::endl;
         return 0;
     }
     return 1;
   }
-}; // class CmdLfLogicSimSharpSat
+}; // class CmdLfLogicAlfans
 
 
 
